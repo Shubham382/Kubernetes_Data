@@ -1,0 +1,34 @@
+*Cluster Management*
+aws eks update-kubeconfig --region  ap-south-1 --name my-cluster (Configure eks on cloudshell)
+kubectl cluster-info     (Check info of cluster )
+kubectl get nodes        (Check nodes status)
+kubectl config view      (Get the configuration of the cluster )
+kubectl api-resources    (List the API resources that are available)
+kubectl api-versions     (List the API that are available)
+kubectl get all --all-namespace (List everything)
+---------------------------------------------------------------------------------------------
+kubectl run pod_name --image=image_name
+kubectl run pod_name --port=80 --image=image_name 
+kubectl expose pod pod_name --port=80 --type=ClusterIP
+kubectl expose pod pod_name --port=80 --terget-port=80 --type=NodePort
+kubectl expose pod my-pod --name my-pod-lb --type=LoadBalancer --port=80 --target-port=80
+kubectl delete pods pod_name 
+kubectl logs my-pod  
+kubectl logs -c nginx my-pod
+kubectl describe pod my-pod
+---------------------------------------------------------------------------------------------
+kubectl get deploymet    (List one or more deployments) 
+
+kubectl describe deploymet <deployment_name> (Display the detailes state of one or more deployments)
+
+kubectl edit deployment <deployment_name>  (Edit and update the definition of one or more deployment on the server kubectl edit deployment <depl)
+
+kubectl create deployment <deployment_name> (Create one a new deployment)
+
+kubectl delete deployment <deployment_name> (delete deployment)
+---------------------------------------------------------------------------------------------
+
+
+aws eks --region <your-region> update-kubeconfig --name <your-cluster-name>
+
+kubectl apply -f nginx-deployment.yaml
